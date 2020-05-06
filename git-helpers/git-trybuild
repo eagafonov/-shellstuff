@@ -1,0 +1,12 @@
+#!/bin/bash
+set -x
+set -e
+set -u
+
+if [ "${#@}" == "0" ]; then
+    git push origin -f  HEAD:$(git rev-parse --abbrev-ref HEAD)-trybuild
+elif [ "${1}" == "user" ]; then
+    git push origin -f HEAD:$(whoami)-trybuild
+else
+    echo "E: Unknown options ${@}" >> /dev/stderr
+fi
