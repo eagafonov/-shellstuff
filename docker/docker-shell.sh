@@ -11,4 +11,4 @@ if [ -z "$CMD" ]; then
 	CMD=/bin/sh
 fi
 
-docker run --rm -ti --user=${U:-root} $IMAGE $CMD
+docker run --rm -ti --user=${U:-root} --entrypoint "" $IMAGE $CMD
