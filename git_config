@@ -1,0 +1,4 @@
+[alias]
+	ri = rebase --autostash --interactive
+	edit-config = ! test -f .git/config && ${EDITOR:-micro} .git/config
+	edit-config-global = ! test -f ~/.gitconfig && ${EDITOR:-micro} ~/.gitconfig
